@@ -9,11 +9,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var pins = document.querySelectorAll('.pin');
 
     var detailMapPaths = {
-        detail1: "C:\\Users\\81805\\OneDrive\\デスクトップ\\エリアマップ\\生田.jpg",
-        detail2: "C:\\Users\\81805\\OneDrive\\デスクトップ\\エリアマップ\\umie.jpg",
-        detail3: "C:\\Users\\81805\\OneDrive\\デスクトップ\\エリアマップ\\ハーバー.jpg",
-        detail4: "C:\\Users\\81805\\OneDrive\\デスクトップ\\エリアマップ\\三宮.jpg",
-        detail5: "C:\\Users\\81805\\OneDrive\\デスクトップ\\エリアマップ\\元町.jpg"
+        detail1: "エリアマップ/生田.jpg",
+        detail2: "エリアマップ/umie.jpg",
+        detail3: "エリアマップ/ハーバー.jpg",
+        detail4: "エリアマップ/三宮.jpg",
+        detail5: "エリアマップ/元町.jpg"
+    };
+
+    var pinImagePaths = {
+        '1': "map_spot/1.jpg",
+        '2': "map_spot/2.jpg",
+        '3': "map_spot/3.jpg",
+        '4': "map_spot/4.jpg",
+        '5': "map_spot/5.jpg"
     };
 
     map.addEventListener('click', function(e) {
@@ -87,14 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function showPinImage(pinNumber) {
-        var pinImagePaths = {
-            '1': "C:\\Users\\81805\\OneDrive\\デスクトップ\\map_spot\\1.jpg",
-            '2': "C:\\Users\\81805\\OneDrive\\デスクトップ\\map_spot\\2.jpg",
-            '3': "C:\\Users\\81805\\OneDrive\\デスクトップ\\map_spot\\3.jpg",
-            '4': "C:\\Users\\81805\\OneDrive\\デスクトップ\\map_spot\\4.jpg",
-            '5': "C:\\Users\\81805\\OneDrive\\デスクトップ\\map_spot\\5.jpg"
-        };
-
         detailMap.src = pinImagePaths[pinNumber];
 
         pins.forEach(function(pin) {
