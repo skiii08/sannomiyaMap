@@ -29,23 +29,24 @@
             font-size: 12px;
             font-weight: bold;
         }
-        .pin {
+       .pin {
             position: absolute;
-            width: 55px;
-            height: 55px;
-            background-image: url("マップピン.png");
+            width: 70px;
+            height: 70px;
+            background-image: url("C:\\Users\\81805\\OneDrive\\デスクトップ\\マップピン.png");
             background-size: cover;
             display: none;
             cursor: pointer;
         }
         .pin span {
             position: absolute;
-            top: 50%;
+            top: 35%;  /* 数字の位置を上げる */
             left: 50%;
             transform: translate(-50%, -50%);
-            color: white;
-            font-size: 16px;
+            color: rgba(0);  /* 透明度を上げる */
+            font-size: 18px;  /* フォントサイズを少し大きくする */
             font-weight: bold;
+
         }
         #detailMapContainer {
             position: absolute;
@@ -70,8 +71,8 @@
         }
         #backButton {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 7%;
+            left: 3%;
             padding: 5px 10px;
             background-color: rgba(255, 255, 255, 0.7);
             cursor: pointer;
@@ -92,11 +93,11 @@
         <div id="detailMapContainer">
             <button id="closeButton">元の画面に戻る</button>
             <img id="detailMap" src="" alt="詳細マップ">
-            <div class="pin" data-pin="1" style="top: 30px; left: 30px;"><span>1</span></div>
-            <div class="pin" data-pin="2" style="top: 60px; left: 100px;"><span>2</span></div>
-            <div class="pin" data-pin="3" style="top: 100px; left: 200px;"><span>3</span></div>
-            <div class="pin" data-pin="4" style="top: 200px; left: 300px;"><span>4</span></div>
-            <div class="pin" data-pin="5" style="top: 300px; left: 400px;"><span>5</span></div>
+            <div class="pin" data-pin="1" style="top: 50%; left: 5%;"><span>1</span></div>
+            <div class="pin" data-pin="2" style="top: 38%; left: 27%;"><span>2</span></div>
+            <div class="pin" data-pin="3" style="top: 57%; left: 25%;"><span>3</span></div>
+            <div class="pin" data-pin="4" style="top: 60%; left: 68%;"><span>4</span></div>
+            <div class="pin" data-pin="5" style="top: 50%; left: 85%;"><span>5</span></div>
             <button id="backButton">戻る</button>
         </div>
     </div>
