@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地図表示サイト</title>
+    <style>
+        #mapContainer {
+            position: relative;
+            width: 100%;
+        }
+        #map {
+            width: 100%;
+            cursor: pointer;
+        }
+        .detailRectangle {
+            position: absolute;
+            width: 28%;
+            height: 23%;
+            border: 3px solid red;
+            pointer-events: none;
+        }
+        .detailName {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .pin {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            background-image: url("C:\\Users\\81805\\OneDrive\\デスクトップ\\マップピン.png");
+            background-size: cover;
+            display: none;
+            cursor: pointer;
+        }
+        .pin span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #detailMapContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        #detailMap {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        #closeButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+        }
+        #backButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="mapContainer">
+        <img id="map" src="C:\\Users\\81805\\Downloads\\三宮全体マップ.jpg" alt="全体マップ">
+        <div class="detailRectangle" style="top: 1%; left: 50%;"><div class="detailName">生田エリア</div></div>
+        <div class="detailRectangle" style="top: 70%; left: 8%;"><div class="detailName">Umieエリア</div></div>
+        <div class="detailRectangle" style="top: 52%; left: 35%;"><div class="detailName">ハーバーエリア</div></div>
+        <div class="detailRectangle" style="top: 25%; left: 65%;"><div class="detailName">三宮エリア</div></div>
+        <div class="detailRectangle" style="top: 27%; left: 33%;"><div class="detailName">元町エリア</div></div>
+
+        <!-- 詳細地図 -->
+        <div id="detailMapContainer">
+            <button id="closeButton">元の画面に戻る</button>
+            <img id="detailMap" src="" alt="詳細マップ">
+            <div class="pin" data-pin="1" style="top: 30px; left: 30px;"><span>1</span></div>
+            <div class="pin" data-pin="2" style="top: 60px; left: 100px;"><span>2</span></div>
+            <div class="pin" data-pin="3" style="top: 100px; left: 200px;"><span>3</span></div>
+            <div class="pin" data-pin="4" style="top: 200px; left: 300px;"><span>4</span></div>
+            <div class="pin" data-pin="5" style="top: 300px; left: 400px;"><span>5</span></div>
+            <button id="backButton">戻る</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
