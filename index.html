@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arpeggio遠足！！</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         #mapContainer {
             position: relative;
@@ -26,8 +29,11 @@
             right: 0;
             padding: 5px;
             background-color: rgba(255, 255, 255, 0.7);
-            font-size: 12px;
-            font-weight: bold;
+            font-size: 18px;
+            font-family: "DotGothic16", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+
         }
        .pin {
             position: absolute;
@@ -40,12 +46,13 @@
         }
         .pin span {
             position: absolute;
-            top: 35%;  /* 数字の位置を上げる */
-            left: 50%;
+            top: 32%;  /* 数字の位置を上げる */
+            left: 63%;
             transform: translate(-50%, -50%);
             color: rgba(0);  /* 透明度を上げる */
-            font-size: 4%;  /* フォントサイズを少し大きくする */
-            font-weight: bold;
+            font-size: 100%;  /* フォントサイズを少し大きくする */
+            font-family: "Press Start 2P", system-ui;
+            font-weight: 400;
 
         }
         #detailMapContainer {
