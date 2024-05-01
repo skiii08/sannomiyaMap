@@ -4,107 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arpeggio遠足！！</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <style>
-        #mapContainer {
-            position: relative;
-            width: 100%;
-        }
-        #map {
-            width: 100%;
-            cursor: pointer;
-        }
-        .detailRectangle {
-            position: absolute;
-            width: 28%;
-            height: 23%;
-            border: 3px solid red;
-            pointer-events: none;
-        }
-        .detailName {
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 5px;
-            background-color: rgba(255, 255, 255, 0.7);
-            font-size: 18px;
-            font-family: "DotGothic16", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-
-        }
-       .pin {
-            position: absolute;
-            width: 8%;
-            height: 8%;
-            background-image: url("https://github.com/skiii08/sannomiyaMap/blob/main/%E3%83%9E%E3%83%83%E3%83%97%E3%83%94%E3%83%B3.png?raw=true");
-            background-size: cover;
-            display: none;
-            cursor: pointer;
-        }
-        .pin span {
-            position: absolute;
-            top: 32%;  /* 数字の位置を上げる */
-            left: 63%;
-            transform: translate(-50%, -50%);
-            color: rgba(0);  /* 透明度を上げる */
-            font-size: 100%;  /* フォントサイズを少し大きくする */
-            font-family: "Press Start 2P", system-ui;
-            font-weight: 400;
-
-        }
-        #detailMapContainer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
-        }
-        #detailMap {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        #closeButton {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            padding: 5px 10px;
-            background-color: rgba(255, 255, 255, 0.7);
-            cursor: pointer;
-        }
-        #backButton {
-            position: absolute;
-            top: 12%;
-            left: 3%;
-            padding: 5px 10px;
-            background-color: rgba(255, 255, 255, 0.7);
-            cursor: pointer;
-            display: none;
-        }
-    </style>
+    
 </head>
+
 <body>
     <div id="mapContainer">
-        <img id="map" src="https://github.com/skiii08/sannomiyaMap/blob/main/%E4%B8%89%E5%AE%AE%E5%85%A8%E4%BD%93%E3%83%9E%E3%83%83%E3%83%97.png?raw=true" alt="全体マップ">
-        <div class="detailRectangle" style="top: 1%; left: 50%;"><div class="detailName">生田エリア</div></div>
-        <div class="detailRectangle" style="top: 70%; left: 8%;"><div class="detailName">Umieエリア</div></div>
-        <div class="detailRectangle" style="top: 52%; left: 35%;"><div class="detailName">ハーバーエリア</div></div>
-        <div class="detailRectangle" style="top: 25%; left: 65%;"><div class="detailName">三宮エリア</div></div>
-        <div class="detailRectangle" style="top: 27%; left: 33%;"><div class="detailName">元町エリア</div></div>
-
+        <img id="map" src="マップ\全体.jpg" alt="全体マップ">
+        <div class="detailRectangle" style="top: 1%; left: 50%;"><div class="detailName">駅北エリア</div></div>
+        <div class="detailRectangle" style="top: 28%; left: 26%;"><div class="detailName">元町エリア</div></div>
+        <div class="detailRectangle" style="top: 25%; left: 60%;"><div class="detailName">三宮エリア</div></div>
+        <div class="detailRectangle" style="top: 58%; left: 20%;"><div class="detailName">海側エリア</div></div>
         <!-- 詳細地図 -->
         <div id="detailMapContainer">
             <button id="closeButton">全体マップにもどる</button>
             <img id="detailMap" src="" alt="詳細マップ">
-            <div class="pin" data-pin="1" style="top: 50%; left: 5%;"><span>1</span></div>
-            <div class="pin" data-pin="2" style="top: 38%; left: 27%;"><span>2</span></div>
-            <div class="pin" data-pin="3" style="top: 57%; left: 25%;"><span>3</span></div>
-            <div class="pin" data-pin="4" style="top: 60%; left: 68%;"><span>4</span></div>
-            <div class="pin" data-pin="5" style="top: 50%; left: 85%;"><span>5</span></div>
+            <!-- ピンの詳細情報はここに記述 -->
+
+            <div class="pin" data-pin="1" style="top: 23%; left: 33%;"><span>1</span></div>
+            <div class="pin" data-pin="2" style="top: 27%; left: 35%;"><span>2</span></div>
+            <div class="pin" data-pin="3" style="top: 25%; left: 40%;"><span>3</span></div>
+            <div class="pin" data-pin="4" style="top: 43%; left: 45%;"><span>4</span></div>
+            <div class="pin" data-pin="5" style="top: 73%; left: 56%;"><span>5</span></div>
+            <div class="pin" data-pin="6" style="top: 34%; left: 53%;"><span>6</span></div>
+            <div class="pin" data-pin="7" style="top: 30%; left: 42%;"><span>7</span></div>
+            <div class="pin" data-pin="8" style="top: 67%; left: 20%;"><span>8</span></div>
+            <div class="pin" data-pin="9" style="top: 64%; left: 68%;"><span>9</span></div>
+            <div class="pin" data-pin="10" style="top: 30%; left: 30%;"><span>10</span></div>
+            <div class="pin" data-pin="11" style="top: 40%; left: 5%;"><span>11</span></div>
+            <div class="pin" data-pin="12" style="top: 78%; left: 27%;"><span>12</span></div>
+            <div class="pin" data-pin="13" style="top: 63%; left: 25%;"><span>13</span></div>
+            <div class="pin" data-pin="14" style="top: 23%; left: 68%;"><span>14</span></div>
+            <div class="pin" data-pin="15" style="top: 45%; left: 85%;"><span>15</span></div>
+            <div class="pin" data-pin="16" style="top: 56%; left: 5%;"><span>16</span></div>
+            <div class="pin" data-pin="17" style="top: 23%; left: 27%;"><span>17</span></div>
+            <div class="pin" data-pin="18" style="top: 30%; left: 80%;"><span>18</span></div>
+            <div class="pin" data-pin="19" style="top: 38%; left: 65%;"><span>19</span></div>
+            <div class="pin" data-pin="20" style="top: 37%; left: 70%;"><span>20</span></div>
+            <div class="pin" data-pin="21" style="top: 35%; left: 73%;"><span>21</span></div>
+            <div class="pin" data-pin="22" style="top: 45%; left: 27%;"><span>22</span></div>
+            <div class="pin" data-pin="23" style="top: 75%; left: 25%;"><span>23</span></div>
+            <div class="pin" data-pin="24" style="top: 15%; left: 68%;"><span>24</span></div>
+            <div class="pin" data-pin="25" style="top: 57%; left: 85%;"><span>25</span></div>
+            <div class="pin" data-pin="26" style="top: 56%; left: 5%;"><span>26</span></div>
+            <div class="pin" data-pin="27" style="top: 37%; left: 27%;"><span>27</span></div>
+            <div class="pin" data-pin="28" style="top: 87%; left: 25%;"><span>28</span></div>
+            <div class="pin" data-pin="29" style="top: 14%; left: 68%;"><span>29</span></div>
+            <div class="pin" data-pin="30" style="top: 67%; left: 85%;"><span>30</span></div>
+            <div class="pin" data-pin="31" style="top: 27%; left: 5%;"><span>31</span></div>
+            <div class="pin" data-pin="32" style="top: 68%; left: 27%;"><span>32</span></div>
+            <div class="pin" data-pin="33" style="top: 37%; left: 25%;"><span>33</span></div>
+            <div class="pin" data-pin="34" style="top: 48%; left: 68%;"><span>34</span></div>
+            <div class="pin" data-pin="35" style="top: 69%; left: 85%;"><span>35</span></div>
+            <div class="pin" data-pin="36" style="top: 57%; left: 5%;"><span>36</span></div>
+            <div class="pin" data-pin="37" style="top: 47%; left: 27%;"><span>37</span></div>
+            <div class="pin" data-pin="38" style="top: 27%; left: 25%;"><span>38</span></div>
+            <div class="pin" data-pin="39" style="top: 17%; left: 68%;"><span>39</span></div>
+            <div class="pin" data-pin="40" style="top: 48%; left: 85%;"><span>40</span></div>
+            <div class="pin" data-pin="41" style="top: 58%; left: 5%;"><span>41</span></div>
+            <div class="pin" data-pin="42" style="top: 47%; left: 27%;"><span>42</span></div>
+
+
             <button id="backButton">とじる</button>
         </div>
     </div>
