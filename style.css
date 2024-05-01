@@ -46,7 +46,7 @@
 .pin[data-pin="8"],
 .pin[data-pin="9"],
 .pin[data-pin="10"] {
-    background-image: url("マップピン\駅北.png");
+    background-image: url("マップピン\駅北ピン.png");
 }
 
 .pin[data-pin="11"],
@@ -60,7 +60,7 @@
 .pin[data-pin="19"],
 .pin[data-pin="20"],
 .pin[data-pin="21"] {
-    background-image: url("マップピン\三宮.png");
+    background-image: url("マップピン\三宮ピン.png");
 }
 
 .pin[data-pin="22"],
@@ -76,7 +76,7 @@
 .pin[data-pin="32"],
 .pin[data-pin="33"],
 .pin[data-pin="34"] {
-    background-image: url("マップピン\元町.png");
+    background-image: url("マップピン\元町ピン.png");
 }
 
 .pin[data-pin="35"],
@@ -87,7 +87,7 @@
 .pin[data-pin="40"],
 .pin[data-pin="41"],
 .pin[data-pin="42"] {
-    background-image: url("マップピン\海側.png");
+    background-image: url("マップピン\海側ピン.png");
 }
 
 /* 他のピンの画像設定も同様に記述 */
