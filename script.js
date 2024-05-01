@@ -9,30 +9,34 @@ document.addEventListener('DOMContentLoaded', function() {
     var pins = document.querySelectorAll('.pin');
 
     var detailMapPaths = {
-        detail1: "エリアマップ/生田.jpg",
-        detail2: "エリアマップ/umie.jpg",
-        detail3: "エリアマップ/ハーバー.jpg",
-        detail4: "エリアマップ/三宮.jpg",
-        detail5: "エリアマップ/元町.jpg"
+        detail1: "エリアマップ/駅北.jpg",
+        detail2: "エリアマップ/元町.jpg",
+        detail3: "エリアマップ/三宮.jpg",
+        detail4: "エリアマップ/海側.jpg",
     };
 
-    var pinImagePaths = {
-        '1': "map_spot/1.jpg",
-        '2': "map_spot/2.jpg",
-        '3': "map_spot/3.jpg",
-        '4': "map_spot/4.jpg",
-        '5': "map_spot/5.jpg"
-    };
+var pinImagePaths = {};
+
+for (var i = 1; i <= 42; i++) {
+    pinImagePaths[i.toString()] = "スポット/" + i + ".jpg";
+}
+
+
+
+
+var previousDetail = null;
+
 
     map.addEventListener('click', function(e) {
         var x = (e.offsetX / map.offsetWidth) * 100;
         var y = (e.offsetY / map.offsetHeight) * 100;
-
+    
         var clickedRectangle = getClickedRectangle(x, y);
-        
+    
         if (clickedRectangle !== null) {
+            previousDetail = clickedRectangle.dataset.detail;
             showDetailMap(clickedRectangle.dataset.detail);
-
+    
             e.preventDefault();
         }
     });
@@ -50,12 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     backButton.addEventListener('click', function() {
-        showDetailMap(detailRectangles[0].dataset.detail);  // 詳細マップを再表示
-        backButton.style.display = 'none';
-        pins.forEach(function(pin) {
-            pin.style.display = 'block';
-        });
-        map.style.filter = 'brightness(0.5)';
+        if (previousDetail) {
+            showDetailMap(previousDetail);
+        }
+        backButton.style.display = 'none'; // backButtonを非表示
     });
 
     function getClickedRectangle(x, y) {
@@ -63,8 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
             var rect = detailRectangles[i];
             var rectLeft = parseFloat(rect.style.left);
             var rectTop = parseFloat(rect.style.top);
-            var rectWidth = rect.offsetWidth * 0.28;  // 28%の幅
-            var rectHeight = rect.offsetHeight * 0.23;  // 23%の高さ
+            var rectWidth = rect.offsetWidth * 0.14;  // 28%の幅
+            var rectHeight = rect.offsetHeight * 0.12;  // 23%の高さ
     
             var rectRight = rectLeft + rectWidth;
             var rectBottom = rectTop + rectHeight;
@@ -76,37 +78,52 @@ document.addEventListener('DOMContentLoaded', function() {
         return null;
     }
     
+    
+    
+    
 
     function showDetailMap(detail) {
         detailMap.src = detailMapPaths[detail];
-
         detailMapContainer.style.display = 'block';
         map.style.filter = 'brightness(0.5)';
-
+    
         pins.forEach(function(pin) {
-            pin.style.display = 'none';
-        });
-
-        if (detail === 'detail1') {
-            pins.forEach(function(pin) {
+            var pinNumber = parseInt(pin.getAttribute('data-pin')); // ピンの番号を取得
+            var pinDetail = '';
+    
+            // ピンの詳細地図を決定
+            if (pinNumber >= 1 && pinNumber <= 10) {
+                pinDetail = 'detail1';
+            } else if (pinNumber >= 11 && pinNumber <= 21) {
+                pinDetail = 'detail2';
+            } else if (pinNumber >= 22 && pinNumber <= 34) {
+                pinDetail = 'detail3';
+            } else if (pinNumber >= 35 && pinNumber <= 42) {
+                pinDetail = 'detail4';
+            }
+    
+            // ピンが選択された詳細地図に関連する場合のみ表示
+            if (pinDetail === detail) {
                 pin.style.display = 'block';
-            });
-        }
+            } else {
+                pin.style.display = 'none';
+            }
+        });
+    
+        previousDetail = detail; // previousDetailを設定
     }
-
+    
     function showPinImage(pinNumber) {
         detailMap.src = pinImagePaths[pinNumber];
-
         pins.forEach(function(pin) {
             pin.style.display = 'none';
         });
-
-        backButton.style.display = 'block';
+        backButton.style.display = 'block'; // pinImageが表示されている場合のみbackButtonを表示
     }
+    
 
     detailRectangles[0].dataset.detail = 'detail1';
     detailRectangles[1].dataset.detail = 'detail2';
     detailRectangles[2].dataset.detail = 'detail3';
     detailRectangles[3].dataset.detail = 'detail4';
-    detailRectangles[4].dataset.detail = 'detail5';
 });
