@@ -65,8 +65,8 @@ var previousDetail = null;
             var rect = detailRectangles[i];
             var rectLeft = parseFloat(rect.style.left);
             var rectTop = parseFloat(rect.style.top);
-            var rectWidth = rect.offsetWidth * 0.14;  // 28%の幅
-            var rectHeight = rect.offsetHeight * 0.12;  // 23%の高さ
+            var rectWidth = rect.offsetWidth * 0.28;  // 28%の幅
+            var rectHeight = rect.offsetHeight * 0.23;  // 23%の高さ
     
             var rectRight = rectLeft + rectWidth;
             var rectBottom = rectTop + rectHeight;
