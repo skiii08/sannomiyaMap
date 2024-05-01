@@ -30,8 +30,8 @@
 
 .pin {
     position: absolute;
-    width: 8%;
-    height: 8%;
+    width: 10%;
+    height: 10%;
     background-size: cover;
     display: none;
     cursor: pointer;
@@ -98,7 +98,7 @@
     left: 63%;
     transform: translate(-50%, -50%);
     color: rgba(0);
-    font-size: 100%;
+    font-size: 90%;
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
 }
