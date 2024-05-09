@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
     for (var key in pinImagePaths) {
         preloadImages.push(pinImagePaths[key]);
     }
+    for (var key in detailMapPaths) {
+        preloadImages.push(detailMapPaths[key]);
+    }
     // すべての画像をプリロードする
     preloadImages.forEach(function(url) {
         var img = new Image();
