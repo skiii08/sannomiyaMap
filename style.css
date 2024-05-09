@@ -127,7 +127,7 @@
     padding: 5px 10px;
     background-color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14px;
     font-family: "DotGothic16", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -141,8 +141,13 @@
     background-color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
     display: none;
-    font-size: 18px;
+    font-size: 14px;
     font-family: "DotGothic16", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+#topImage {
+    max-width: 100%;
+    height: auto;
 }
