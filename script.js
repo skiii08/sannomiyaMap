@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    var initialScreen = document.getElementById('initialScreen');
     var mapContainer = document.getElementById('mapContainer');
+    var topImage = document.getElementById('topImage');
     var map = document.getElementById('map');
     var detailMap = document.getElementById('detailMap');
     var detailRectangles = document.querySelectorAll('.detailRectangle');
@@ -7,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var closeButton = document.getElementById('closeButton');
     var backButton = document.getElementById('backButton');
     var pins = document.querySelectorAll('.pin');
+
 
     var detailMapPaths = {
       detail1: "エリアマップ/駅北.jpg", 
@@ -42,6 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     var previousDetail = null;
+
+    topImage.addEventListener('click', function() {
+        initialScreen.style.display = 'none';
+        mapContainer.style.display = 'block';
+        map.src = "C:\\Users\\81805\\OneDrive\\デスクトップ\\全体.jpg"; // ここで全体マップの画像のパスを指定
+    });
 
     map.addEventListener('click', function(e) {
         var x = (e.offsetX / map.offsetWidth) * 100;
