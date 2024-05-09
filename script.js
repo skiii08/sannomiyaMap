@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var pins = document.querySelectorAll('.pin');
 
     var detailMapPaths = {
-      detail1: "エリアマップ\駅北.jpg", 
-        detail2: "エリアマップ\元町.jpg",
-        detail3: "エリアマップ\三宮.jpg",
-        detail4: "エリアマップ\海側.jpg",
+      detail1: "エリアマップ/駅北.jpg", 
+        detail2: "エリアマップ/元町.jpg",
+        detail3: "エリアマップ/三宮.jpg",
+        detail4: "エリアマップ/海側.jpg",
     };
 
     var pinImagePaths = {};
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     topImage.addEventListener('click', function() {
         initialScreen.style.display = 'none';
         mapContainer.style.display = 'block';
-        map.src = "エリアマップ\全体.jpg"; // ここで全体マップの画像のパスを指定
+        map.src = "エリアマップ/全体.jpg"; // ここで全体マップの画像のパスを指定
     });
 
     map.addEventListener('click', function(e) {
