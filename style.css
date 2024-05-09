@@ -78,7 +78,7 @@
 .pin[data-pin="32"],
 .pin[data-pin="33"],
 .pin[data-pin="34"] {
-    background-image: url(マップピン/元町ピン.png");
+    background-image: url("マップピン/元町ピン.png");
 }
 
 .pin[data-pin="35"],
@@ -100,7 +100,7 @@
     left: 63%;
     transform: translate(-50%, -50%);
     color: rgba(0);
-    font-size: 100%;
+    font-size: 70%;
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
 }
