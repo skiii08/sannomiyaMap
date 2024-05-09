@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var pinImagePaths = {};
 
+    var preloadImages = [];
+for (var key in pinImagePaths) {
+    preloadImages.push(pinImagePaths[key]);
+}
+preloadImages.forEach(function(url) {
+    var img = new Image();
+    img.src = url;
+});
+
 for (var i = 1; i <= 42; i++) {
     pinImagePaths[i.toString()] = "スポット/" + i + ".jpg";
 }
@@ -127,3 +136,5 @@ var previousDetail = null;
     detailRectangles[2].dataset.detail = 'detail3';
     detailRectangles[3].dataset.detail = 'detail4';
 });
+
+
