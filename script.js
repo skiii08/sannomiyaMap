@@ -23,24 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pinImagePaths[i.toString()] = "スポット/" + i + ".jpg";
     }
 
-    var pinBackgroundImages = [];
-var styleSheets = document.styleSheets;
-for (var i = 0; i < styleSheets.length; i++) {
-    var rules = styleSheets[i].rules || styleSheets[i].cssRules;
-    if (rules) {
-        for (var j = 0; j < rules.length; j++) {
-            var rule = rules[j];
-            if (rule instanceof CSSStyleRule) {
-                var backgroundImage = rule.style.backgroundImage;
-                if (backgroundImage && backgroundImage !== 'none') {
-                    var imageUrl = backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
-                    pinBackgroundImages.push(imageUrl);
-                }
-            }
-        }
-    }
-}
-
+   
     // すべての画像のURLを収集する
     var preloadImages = [];
     for (var key in pinImagePaths) {
@@ -50,7 +33,7 @@ for (var i = 0; i < styleSheets.length; i++) {
         preloadImages.push(detailMapPaths[key]);
     }
 
-    preloadImages = preloadImages.concat(pinBackgroundImages);
+    
     
     // すべての画像をプリロードする
     preloadImages.forEach(function(url) {
