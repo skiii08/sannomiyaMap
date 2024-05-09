@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     topImage.addEventListener('click', function() {
         initialScreen.style.display = 'none';
         mapContainer.style.display = 'block';
-        map.src = "C:\\Users\\81805\\OneDrive\\デスクトップ\\全体.jpg"; // ここで全体マップの画像のパスを指定
+        map.src = "エリアマップ\全体.jpg"; // ここで全体マップの画像のパスを指定
     });
 
     map.addEventListener('click', function(e) {
